@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELEGA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .back-wrapper {
+            grid-column: span 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <img  class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="DELEGA">
+
+    <div class="gridbase equaliser main-box">
+        <p>Krajowy czas podróży:</p> <p>{{ calculator.get_country_travel_time() }}</p>
+        <p>Zagraniczny czas podróży:</p> <p>{{ calculator.get_international_travel_time() }}</p>
+        <p>Łączny czas podróży:</p> <p>{{ calculator.get_total_travel_time() }}</p>
+        <p>Należna kwota:</p> <p>{{ calculator.get_diet() }}</p>
+
+        <div class="back-wrapper">
+            <input type="button" class="button" value="Powrót" onclick="history.back()"/>
+        </div>
+    </div>
+
+</body>
+</html>

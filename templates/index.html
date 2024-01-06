@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELEGA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Powiększenie checkboxa */
+        input[type="checkbox"] {
+            -ms-transform: scale(1.5); /* dla Internet Explorer */
+            -moz-transform: scale(1.5); /* dla Mozilla Firefox */
+            -webkit-transform: scale(1.5); /* dla Google Chrome, Safari, Opera */
+            transform: scale(1.5);
+            margin-left: 0.5em; /* Odstęp między checkboxem a tekstem */
+        }
+
+        select {
+            /* Powiększenie selecta tak jak checkboxa */
+            -ms-transform: scale(1.5);
+            -moz-transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+
+            /* Ustawienie go, żeby był równo w gridzie - musi mieć 2/3 oryginalnej wielkości
+            i być przesunięty w prawo o 1/6 oryginalnej wielkości */
+            width: 66.6%;
+            margin-left: 16.7%;
+        }
+    </style>
+</head>
+<body>
+    <img  class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="DELEGA">
+    <p style="font-size: 25px;">Kalkulator pozwala obliczyć czas trwania podróży służbowej krajowej i zagranicznej.
+        Dla podróży zagranicznej można również obliczyć należności z tytułu diet, z uwzględnieniem przysługujących posiłków oraz czasu trwania podróży.</p>
+
+
+</style>
+    <form action="{{ url_for('submit') }}" class="main-box" method="post">
+        <label for="podrozkrajowa">Podróż krajowa</label>
+        <input type="checkbox" id="podrozkrajowa" name="kraj">
+
+        <div class="hidden gridbase equaliser" id="kraj_pola" style="margin-bottom: 2em;">
+            <label for="kraj_start">Rozpoczęcie podróży:</label>
+            <input type="datetime-local" id="kraj_start" name="kraj_start">
+
+            <label for="kraj_koniec">Zakończenie podróży:</label>
+            <input type="datetime-local" id="kraj_koniec" name="kraj_koniec">
+
+            <label for="kraj_sniadanie">Śniadanie:</label>
+            <input type="number" id="kraj_sniadanie" name="kraj_sniadanie" min="0">
+
+            <label for="kraj_obiad">Obiad:</label>
+            <input type="number" id="kraj_obiad" name="kraj_obiad" min="0">
+
+            <label for="kraj_kolacja">Kolacja:</label>
+            <input type="number" id="kraj_kolacja" name="kraj_kolacja" min="0">
+
+            <label for="kraj_noclegi">Liczba noclegów:</label>
+            <input type="number" id="kraj_noclegi" name="kraj_noclegi" min="0">
+
+            <label for="kraj_komunikacja">Dni komunikacji miejskiej:</label>
+            <input type="number" id="kraj_komunikacja" name="kraj_komunikacja" min="0">
+        </div>
+
+        <br>
+        <label for="podrozzagraniczna">Podróż zagraniczna</label>
+        <input type="checkbox" id="podrozzagraniczna" name="zagra">
+
+        <div class="hidden gridbase equaliser" id="zagra_pola">
+            <label for="zagra_start">Rozpoczęcie podróży:</label>
+            <input type="datetime-local" id="zagra_start" name="zagra_start">
+
+            <label for="zagra_koniec">Zakończenie podróży:</label>
+            <input type="datetime-local" id="zagra_koniec" name="zagra_koniec">
+
+            <label for="zagra_sniadanie">Śniadanie:</label>
+            <input type="number" id="zagra_sniadanie" name="zagra_sniadanie" min="0">
+
+            <label for="zagra_obiad">Obiad:</label>
+            <input type="number" id="zagra_obiad" name="zagra_obiad" min="0">
+
+            <label for="zagra_kolacja">Kolacja:</label>
+            <input type="number" id="zagra_kolacja" name="zagra_kolacja" min="0">
+
+            <label for="zagra_noclegi">Liczba noclegów:</label>
+            <input type="number" id="zagra_noclegi" name="zagra_noclegi" min="0">
+
+            <!-- Lista krajów generowana z otrzymanego parametru 'countries' -->
+            <label for="country">Kraj:</label>
+            <select id="country" name="country">
+                {% for country in countries %}
+                    <option value="{{country}}">{{country}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <br>
+
+        <input type="submit" class="button" value="Prześlij">
+    </form>
+</body>
+
+<script>
+    // Do obsługi zmiany widoczności pól podróży
+    document.getElementById('podrozkrajowa').addEventListener('change', function() {
+        // Ukrycie/pokazanie pola
+        const pola_div = document.getElementById('kraj_pola');
+        pola_div.classList.toggle('hidden', !this.checked);
+
+        // Ustawienie czy są wymagane żeby przesyłanie działało
+        const inputs = pola_div.getElementsByTagName('input');
+        for(let input of inputs) {
+            input.required = this.checked;
+        }
+    });
+
+    // Do obsługi zmiany widoczności pól podróży
+    document.getElementById('podrozzagraniczna').addEventListener('change', function() {
+        // Ukrycie/pokazanie pola
+        const pola_div = document.getElementById('zagra_pola');
+        pola_div.classList.toggle('hidden', !this.checked);
+
+        // Ustawienie czy są wymagane żeby przesyłanie działało
+        const inputs = pola_div.getElementsByTagName('input');
+        for(let input of inputs) {
+            input.required = this.checked;
+        }
+    });
+
+</script>
+
+</html>
