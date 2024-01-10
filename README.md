@@ -16,8 +16,11 @@ Link do repozytorium: https://github.com/karolinawiercinska/flaskProject1
 Prawa autorskie
 Autorzy:
 Sylwia Bukowska
+
 Zuzanna Przygodzka
+
 Karolina Wiercińska
+
 Warunki licencyjne do oprogramowania:
 Możliwość bezpłatnego korzystania z oprogramowania bez mocy
 wprowadzania zmian w kodzie źródłowym.
