@@ -14,7 +14,9 @@ Krótki opis ze wskazaniem celów: Aplikacja DELEGA to prosty kalkulator online,
 Link do repozytorium: https://github.com/karolinawiercinska/flaskProject1
 
 Prawa autorskie
+
 Autorzy:
+
 Sylwia Bukowska
 
 Zuzanna Przygodzka
@@ -25,13 +27,19 @@ Warunki licencyjne do oprogramowania:
 Możliwość bezpłatnego korzystania z oprogramowania bez mocy
 wprowadzania zmian w kodzie źródłowym.
 
+
 Architektura oprogramowania
+
 1.	Architektura rozwoju – stos technologiczny.
+   
 Python, Flask, Pycharm
+
 System kontroli wersji: GitHub
 
-2.	Architektura uruchomieniowa – stos technologiczny.
+3.	Architektura uruchomieniowa – stos technologiczny.
+   
 Aplikacja działa na przeglądarkach: Microsoft Edge, Mozilla Firefox, Google Chrome, Safari i Opera. 
+
 
 
 
@@ -44,14 +52,23 @@ Specyfikacja wymagań
 Wymagania funkcjonalne:
 
 Identyfikator	U1
+
 Nazwa	Uruchomienie
+
 Opis	Każdy użytkownik może uruchomić stronę Delega w przeglądarce internetowej.
+
 Priorytet	1
 
+
 Identyfikator	RD2
+
 Nazwa	Rodzaj delegacji
+
 Opis	Użytkownik wybiera rodzaj delegacji – krajowa, zagraniczna lub obie.
+
 Priorytet	1
+
+
 
 Identyfikator	WK2
 Nazwa	Wybór kraju
