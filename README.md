@@ -7,18 +7,6 @@ w semestrze letnim roku akademickiego
 
 
 
-
- 
-
-
-
-
-
-
-
-
-
-
 Sopot, 2024 
 Charakterystyka oprogramowania
 Nazwa skrócona: DELEGA
@@ -41,11 +29,6 @@ System kontroli wersji: GitHub
 
 2.	Architektura uruchomieniowa – stos technologiczny.
 Aplikacja działa na przeglądarkach: Microsoft Edge, Mozilla Firefox, Google Chrome, Safari i Opera. 
-
-
-
-
-
 
 
 
