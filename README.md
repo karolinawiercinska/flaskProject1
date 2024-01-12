@@ -1,16 +1,10 @@
-Dokumentacja aplikacji DELEGA 
-zrealizowanej w ramach zajęć 
+Dokumentacja aplikacji DELEGA zrealizowanej w ramach zajęć 
 Inżynierii oprogramowania 
-w semestrze letnim roku akademickiego 
-2023/2024
+w semestrze letnim roku akademickiego 2023/2024
 
 
-
-
-Sopot, 2024 
 Charakterystyka oprogramowania
-Nazwa skrócona: DELEGA
-Pełna nazwa:
+Nazwa: DELEGA
 Krótki opis ze wskazaniem celów: Aplikacja DELEGA to prosty kalkulator online, który umożliwia szybkie obliczanie szacunkowych kosztów podróży służbowych.
 Link do repozytorium: https://github.com/karolinawiercinska/flaskProject1
 
